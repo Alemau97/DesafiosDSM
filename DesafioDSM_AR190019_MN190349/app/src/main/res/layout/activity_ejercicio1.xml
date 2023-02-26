@@ -5,21 +5,26 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".Ejercicio1Activity"
-    android:orientation="vertical"
-    android:layout_gravity="center"
-    android:gravity="center">
+    android:orientation="vertical">
 
     <TextView
         android:id="@+id/LlbDatos"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:capitalize="none"
+        android:layout_margin="20px"
+        android:textSize="60px"
+        android:textColor="#0f05b8"
+        android:textStyle="bold"
         android:text="Datos del empleado: "
-        />
+        android:textAppearance="@style/TextAppearance.AppCompat.Large" />
 
     <EditText
         android:id="@+id/TxtNombre"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_margin="20px"
+        android:textSize="22sp"
         android:hint="Nombre de empleado"
         android:inputType="text"
         />
@@ -28,6 +33,8 @@
         android:id="@+id/TxtCodigo"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:textSize="22sp"
+        android:layout_margin="20px"
         android:hint="Código de empleado"
         android:inputType="number"
         />
@@ -36,7 +43,9 @@
         android:id="@+id/TxtVentas"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:textSize="22sp"
         android:inputType="numberDecimal"
+        android:layout_margin="20px"
         android:hint="Ventas realizadas"
         />
 
@@ -44,7 +53,9 @@
         android:id="@+id/TxtMes"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:textSize="22sp"
         android:inputType="text"
+        android:layout_margin="20px"
         android:hint="Ingrese el mes de venta"
         />
 
@@ -52,14 +63,12 @@
         android:id="@+id/BtnResultados"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:textAllCaps="false"
+        android:layout_margin="20px"
+        android:background="#8BC34A"
+        android:backgroundTint="#D66060"
         android:text="Calcular comisión"
-        />
+        android:textAllCaps="false"
+        android:textSize="50px"
+        android:textStyle="bold" />
 
-    <TextView
-        android:id="@+id/LlbResultadoComis"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Resultado: "
-        />
 </LinearLayout>

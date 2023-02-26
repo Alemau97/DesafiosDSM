@@ -1,5 +1,6 @@
 package com.example.desafiodsm_ar190019_mn190349
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
@@ -11,7 +12,6 @@ lateinit var codigoEmpleado: EditText
 lateinit var ventasRealizadas: EditText
 lateinit var mesVentas: EditText
 lateinit var calcComi: Button
-lateinit var resultComis: TextView
 class Ejercicio1Activity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -22,7 +22,6 @@ class Ejercicio1Activity : AppCompatActivity() {
         ventasRealizadas = findViewById(R.id.TxtVentas)
         mesVentas = findViewById(R.id.TxtMes)
         calcComi = findViewById(R.id.BtnResultados)
-        resultComis = findViewById(R.id.LlbResultadoComis)
 
         calcComi.setOnClickListener {
             var empleadoCompleto: String = nombreEmpleado.text.toString()
@@ -30,49 +29,28 @@ class Ejercicio1Activity : AppCompatActivity() {
             var ventas: Float = ventasRealizadas.text.toString().toFloat()
             var mesVent: String = mesVentas.text.toString()
 
-            if(ventas < 500){
-                resultComis.setText(
-                    "Nombre: " + empleadoCompleto +
-                            "Código" + codigoEmp +
-                            "Ventas: $" + ventas +
-                            "Mes actual: " + mesVent +
-                    "No es acreedor de una comisión :(")
-            }else if(ventas >=500 && ventas < 1000){
-                resultComis.setText(
-                    "Nombre: " + empleadoCompleto +
-                            "Código" + codigoEmp +
-                            "Ventas: $" + ventas +
-                            "Mes actual: " + mesVent +
-                            "Comisión: $" + ventas*0.05)
+            var resumen: String = "Nombre: " + empleadoCompleto +
+                    "\nCódigo empleado: " + codigoEmp +
+                    "\nVentas realizadas: $" + ventas +
+                    "\nMes: " + mesVent +
+                    "\nComisión: $" + if(ventas < 500){
+                        "No hay comisión :C"
+        }else if(ventas >=500 && ventas < 1000){
+            ventas*0.05
             }else if(ventas >=1000 && ventas < 2000){
-                resultComis.setText(
-                    "Nombre: " + empleadoCompleto +
-                            "Código" + codigoEmp +
-                            "Ventas: $" + ventas +
-                            "Mes actual: " + mesVent +
-                            "Comisión: $" +ventas*0.1)
+                ventas*0.1
             }else if(ventas >=2000 && ventas < 3000){
-                resultComis.setText(
-                    "Nombre: " + empleadoCompleto +
-                            "Código" + codigoEmp +
-                            "Ventas: $" + ventas +
-                            "Mes actual: " + mesVent +
-                            "Comisión: $" +ventas*0.15)
+                ventas*0.15
             }else if(ventas >=3000 && ventas < 4000){
-                resultComis.setText(
-                    "Nombre: " + empleadoCompleto +
-                            "Código" + codigoEmp +
-                            "Ventas: $" + ventas +
-                            "Mes actual: " + mesVent +
-                            "Comisión: $" +ventas*0.2)
+                ventas*0.2
             }else{
-                resultComis.setText(
-                    "Nombre: " + empleadoCompleto +
-                            "Código" + codigoEmp +
-                            "Ventas: $" + ventas +
-                            "Mes actual: " + mesVent +
-                            "Comisión: $" +ventas*0.3)
+                ventas*0.3
             }
+
+            val intent = Intent(this, MuestraDatos1::class.java)
+            intent.putExtra("DatosCliente", resumen)
+            startActivity(intent)
+
         }
 
     }
