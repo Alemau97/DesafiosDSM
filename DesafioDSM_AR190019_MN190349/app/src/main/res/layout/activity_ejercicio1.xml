@@ -1,9 +1,65 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Ejercicio1Activity">
+    tools:context=".Ejercicio1Activity"
+    android:orientation="vertical"
+    android:layout_gravity="center"
+    android:gravity="center">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <TextView
+        android:id="@+id/LlbDatos"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Datos del empleado: "
+        />
+
+    <EditText
+        android:id="@+id/TxtNombre"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Nombre de empleado"
+        android:inputType="text"
+        />
+
+    <EditText
+        android:id="@+id/TxtCodigo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Código de empleado"
+        android:inputType="number"
+        />
+
+    <EditText
+        android:id="@+id/TxtVentas"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="numberDecimal"
+        android:hint="Ventas realizadas"
+        />
+
+    <EditText
+        android:id="@+id/TxtMes"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="text"
+        android:hint="Ingrese el mes de venta"
+        />
+
+    <Button
+        android:id="@+id/BtnResultados"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textAllCaps="false"
+        android:text="Calcular comisión"
+        />
+
+    <TextView
+        android:id="@+id/LlbResultadoComis"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Resultado: "
+        />
+</LinearLayout>
