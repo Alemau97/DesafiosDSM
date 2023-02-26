@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_gravity="center"
+    android:gravity="center"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Ejercicio2Activity">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Ejercicio 2 DesafioDSM"
+        android:textSize="20sp"
+        android:textColor="#0f05b8"
+        android:textStyle="bold"/>
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="294dp"
+        android:layout_height="104dp"
+        android:layout_marginTop="30dp"
+        app:srcCompat="@drawable/formulageneral" />
+    
+    <EditText
+        android:id="@+id/txtVariableA"
+        android:layout_marginTop="20dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Ingrese el valor de la variable 'a'"
+        android:inputType="numberDecimal"/>
+
+    <EditText
+        android:id="@+id/txtVariableB"
+        android:layout_marginTop="20dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Ingrese el valor de la variable 'b'"
+        android:inputType="numberDecimal"/>
+
+    <EditText
+        android:id="@+id/txtVariableC"
+        android:layout_marginTop="20dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Ingrese el valor de la variable 'c'"
+        android:inputType="numberDecimal"/>
+
+    <Button
+        android:id="@+id/btnResultado"
+        android:layout_marginTop="30dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Calcular resultado"/>
+
+    <TextView
+        android:id="@+id/lblResultado"
+        android:layout_marginTop="50dp"
+        android:textSize="20sp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <TextView
+        android:id="@+id/lblResultado2"
+        android:layout_marginTop="50dp"
+        android:textSize="20sp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+
+</LinearLayout>
