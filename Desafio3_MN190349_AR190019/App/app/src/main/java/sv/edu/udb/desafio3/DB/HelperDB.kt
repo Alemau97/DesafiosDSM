@@ -8,21 +8,27 @@ class HelperDB(context: Context):SQLiteOpenHelper(context, DATABASE_NAME, null, 
     companion object{
         private const val DATABASE_NAME = "CarsMotors.db"
         private const val DATABASE_VERSION = 1
-        private const val ID = "idmarcas"
-        private const val nombre = "nombre"
-        private const val TABLE_NAME_MARCA = "marca"
-        private const val COL_ID = "idmarcas"
-        private const val COL_NOMBRE = "nombre"
     }
 
+
     override fun onCreate(db: SQLiteDatabase?) {
-        val createMarca = ("CREATE TABLE IF NOT EXISTS " + TABLE_NAME_MARCA + "("
-                + COL_ID + "integer primary key autoincrement, "
-                +COL_NOMBRE + "varchar(45);")
-        db?.execSQL(createMarca)
+        val CREATE_Usuarios =
+            "CREATE TABLE IF NOT EXISTS usuario (" +
+                    "idusuario INTEGER PRIMARY KEY, " +
+                    "nombres varchar(45)," +
+                    "apellidos varchar(45)," +
+                    "email varchar(45)," +
+                    "user varchar(45)," +
+                    "password varchar(45)," +
+                    "tipo varchar(45))"
+        db?.execSQL(CREATE_Usuarios)
     }
 
     override fun onUpgrade(db: SQLiteDatabase?, oldVersion: Int, newVersion: Int) {
-        db!!.execSQL("DROP TABLE IF EXISTS $TABLE_NAME_MARCA")
+        val DROP_Usuarios = "DROP TABLE IF EXISTS usuario"
+        db?.execSQL(DROP_Usuarios)
+        onCreate(db)
     }
+
+
 }

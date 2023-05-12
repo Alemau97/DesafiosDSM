@@ -25,7 +25,7 @@
             app:srcCompat="@drawable/carsmotorslogin" />
 
         <EditText
-            android:id="@+id/txtEmail"
+            android:id="@+id/txtLoginEmail"
             android:layout_width="match_parent"
             android:layout_height="60dp"
             android:layout_marginHorizontal="16dp"
@@ -36,7 +36,7 @@
             android:inputType="textEmailAddress"/>
 
         <EditText
-            android:id="@+id/txtPassword"
+            android:id="@+id/txtLoginPassword"
             android:layout_width="match_parent"
             android:layout_height="60dp"
             android:layout_marginHorizontal="16dp"
@@ -47,7 +47,7 @@
             android:inputType="textPassword" />
         
         <androidx.appcompat.widget.AppCompatButton
-            android:id="@+id/btnIngresar"
+            android:id="@+id/btnLoginIngresar"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginHorizontal="16dp"
@@ -59,7 +59,7 @@
             android:layout_marginTop="50dp"/>
 
         <TextView
-            android:id="@+id/lblRegister"
+            android:id="@+id/lblLoginRegister"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginHorizontal="16dp"
